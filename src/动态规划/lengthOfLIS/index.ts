@@ -2,6 +2,8 @@
  * @Author: TangLiangcheng 
  * @Date: 2020-06-18 22:45:32 
  * @Desc: 时间复杂度 O(n^2) 
+ * 状态转移方程 dp[i] = max(dp[i], dp[j] + 1)
+ * (j=1, 2, 3 ... i - 1 && A[i] > A[j])
  */
 function lengthOfLIS(nums: number[]): number {
     if (nums.length === 0) return 0;

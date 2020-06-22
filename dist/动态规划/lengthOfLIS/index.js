@@ -3,6 +3,8 @@
  * @Author: TangLiangcheng
  * @Date: 2020-06-18 22:45:32
  * @Desc: 时间复杂度 O(n^2)
+ * 状态转移方程 dp[i] = max(dp[i], dp[j] + 1)
+ * (j=1, 2, 3 ... i - 1 && A[i] > A[j])
  */
 function lengthOfLIS(nums) {
     if (nums.length === 0)
@@ -20,3 +22,4 @@ function lengthOfLIS(nums) {
 }
 ;
 console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18])); // 4
+//# sourceMappingURL=index.js.map
