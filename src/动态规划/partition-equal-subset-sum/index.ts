@@ -10,12 +10,18 @@ function canPartition(nums: number[]): boolean {
     const n:number = nums.length;
     const halfSum:number = sum / 2;
 
-    // let dp2: Array<Array<boolean>> = new Array(n + 1).fill(new Array(halfSum + 1).fill(false));
-    let dp: Array<Array<boolean>> = Array.from({ length: n + 1 }, () =>
+    let dp1: Array<Array<boolean>> = Array(n + 1).fill(Array(halfSum + 1).fill(false));
+    let dp2: Array<Array<boolean>> = Array.from({ length: n + 1 }, () =>
         new Array(halfSum + 1).fill(false));
-    // console.log('dp2', typeof dp2)
-    // console.log('dp1', typeof dp)
-    // console.log(JSON.stringify(dp2) == JSON.stringify(dp))
+
+    console.log('dp2', JSON.stringify(dp2))
+    console.log('dp1', JSON.stringify(dp1))
+
+    /**----------- */
+    var dp = dp1 // => 最终return true
+    // var dp = dp2 // => 最终return false
+    /**----------- */
+
     for(let i: number = 0; i <= n; i++) {
         dp[i][0] = true;
     }
